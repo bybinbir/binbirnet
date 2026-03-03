@@ -1,0 +1,56 @@
+{
+  "global": {
+    "titleTemplate": "%s | BinbirNet",
+    "defaultTitle": "BinbirNet | Anamur ve Bozyazı'nın En Hızlı İnterneti",
+    "description": "Anamur ve Bozyazı'da taahhütsüz, kotasız, yüksek hızlı fiber internet.",
+    "keywords": "anamur internet, bozyazı internet, fiber internet, binbirnet",
+    "ogImage": "/img/og-image.jpg",
+    "ogUrl": "https://binbirnet.com.tr",
+    "ogSiteName": "BinbirNet",
+    "twitterCard": "summary_large_image",
+    "robots": "index,follow"
+  },
+  "pages": {
+    "/": {
+      "title": "BinbirNet | Anamur ve Bozyazı'nın En Hızlı İnterneti",
+      "description": "Anamur ve Bozyazı'da taahhütsüz, kotasız, yüksek hızlı fiber internet. BinbirNet ile yerel ve samimi hizmet.",
+      "keywords": "anamur internet, bozyazı internet, fiber internet, kotasız internet, binbirnet"
+    },
+    "/paketler": {
+      "title": "İnternet Paketleri",
+      "description": "BinbirNet fiber ve kablosuz internet paketleri. Taahhütsüz, kotasız seçenekler."
+    },
+    "/kampanyalar": {
+      "title": "Kampanyalar",
+      "description": "BinbirNet güncel kampanyaları ve fırsatları."
+    },
+    "/kurumsal": {
+      "title": "Kurumsal | BinbirNet",
+      "description": "BinbirNet kurumsal vizyonu, misyonu ve hizmet anlayışı."
+    },
+    "/iletisim": {
+      "title": "İletişim",
+      "description": "BinbirNet iletişim bilgileri, adres ve telefon numaraları."
+    },
+    "/basvuru": {
+      "title": "Başvuru",
+      "description": "BinbirNet internet başvuru formu."
+    },
+    "/altyapi-sorgula": {
+      "title": "Altyapı Sorgula",
+      "description": "Adresinizde BinbirNet altyapısını sorgulayın."
+    },
+    "/destek": {
+      "title": "Destek",
+      "description": "BinbirNet müşteri destek ve sık sorulan sorular."
+    },
+    "/hiz-testi": {
+      "title": "Hız Testi",
+      "description": "İnternet hızınızı test edin."
+    },
+    "/guvenli-internet": {
+      "title": "Güvenli İnternet",
+      "description": "BinbirNet güvenli internet hizmeti."
+    }
+  }
+}

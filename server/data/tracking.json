@@ -1,0 +1,25 @@
+{
+  "scripts": [
+    {
+      "id": "ga4",
+      "name": "Google Analytics 4",
+      "type": "ga4",
+      "trackingId": "",
+      "enabled": false
+    },
+    {
+      "id": "gtm",
+      "name": "Google Tag Manager",
+      "type": "gtm",
+      "trackingId": "",
+      "enabled": false
+    },
+    {
+      "id": "fbpixel",
+      "name": "Facebook Pixel",
+      "type": "facebook_pixel",
+      "trackingId": "",
+      "enabled": false
+    }
+  ]
+}

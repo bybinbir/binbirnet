@@ -1,0 +1,16 @@
+[
+  {
+    "id": "komsunu-getir",
+    "title": "Komsunu Getir, 1 Ay Internet Kazan",
+    "description": "Bir komsunuzu veya arkadasinizi binbir.net ailesine katin, 1 ay ucretsiz internet kazanin!",
+    "active": true,
+    "order": 0
+  },
+  {
+    "id": "sabit-fiyat",
+    "title": "12 ay sabit fiyat garantisi",
+    "description": "12 ay boyunca fiyat artisi olmadan internet keyfinin tadini cikarin.",
+    "active": true,
+    "order": 1
+  }
+]

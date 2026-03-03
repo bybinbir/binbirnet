@@ -1,0 +1,31 @@
+{
+  "features": [
+    { "id": "1", "icon": "sentiment_very_satisfied", "title": "Kolay Kurulum", "description": "Hızlıca bağlarız", "bgColor": "blue", "iconColor": "secondary", "order": 0 },
+    { "id": "2", "icon": "home_pin", "title": "Adrese Teslim", "description": "Sorgula ve gör", "bgColor": "green", "iconColor": "primary", "order": 1 },
+    { "id": "3", "icon": "volunteer_activism", "title": "Dost Destek", "description": "7/24 Yanınızdayız", "bgColor": "orange", "iconColor": "primary", "order": 2 },
+    { "id": "4", "icon": "rocket_launch", "title": "Sınırsız Eğlence", "description": "Kota derdi yok", "bgColor": "purple", "iconColor": "secondary", "order": 3 }
+  ],
+  "steps": [
+    { "id": "1", "icon": "edit_note", "title": "Merhaba Deyin", "description": "Web sitemizden veya bir telefonla başvurunuzu iletin. Gerisini biz hallederiz.", "bgColor": "blue", "rotateDirection": "right", "order": 0 },
+    { "id": "2", "icon": "calendar_month", "title": "Sözleşelim", "description": "Size en uygun zamanı belirleyelim, ekiplerimiz çayınızı içmeye değil, internetinizi kurmaya gelsin!", "bgColor": "orange", "rotateDirection": "left", "order": 1 },
+    { "id": "3", "icon": "auto_awesome", "title": "Bağlanın", "description": "Hızlıca kurulumu yapıyoruz ve size sadece internetin tadını çıkarmak kalıyor.", "bgColor": "green", "rotateDirection": "right", "order": 2 }
+  ],
+  "packagesSection": {
+    "title": "Sizin İçin En Doğru Paket Hangisi?",
+    "subtitle": "İhtiyacınıza uygun, basit ve net çözümler."
+  },
+  "stepsSection": {
+    "title": "Sadece 3 Adımda Aramızdasınız"
+  },
+  "cta": {
+    "title": "Bölgenizde Var mıyız?",
+    "description": "Sadece birkaç saniyede altyapınızı kontrol edin, size en uygun internet teklifini görün.",
+    "buttonText": "Altyapımı Sorgula",
+    "buttonHref": "/altyapi-sorgula",
+    "buttonSubtext": "1 dakikada sonuç alın",
+    "features": [
+      { "icon": "bolt", "text": "Anında Sonuç" },
+      { "icon": "lock", "text": "Güvenli Sorgu" }
+    ]
+  }
+}

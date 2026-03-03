@@ -1,0 +1,88 @@
+{
+  "company": {
+    "name": "BinbirNet",
+    "fullName": "BinbirNet İnternet Bilişim ve Haberleşme Teknolojileri San.Tic.Ltd.Şti",
+    "description": "BinbirNet İnternet Bilişim, bireysel ve kurumsal müşterilerine altyapıya özel internet çözümleri sunar.",
+    "mersis": "0811053765400011",
+    "copyrightYear": "2026"
+  },
+  "contact": {
+    "phones": [
+      {
+        "label": "Cep / WhatsApp",
+        "number": "0532 156 1001",
+        "href": "tel:+905321561001",
+        "primary": true
+      },
+      {
+        "label": "Ücretsiz Hat",
+        "number": "0800 606 02 17",
+        "href": "tel:+908006060217"
+      },
+      {
+        "label": "Sabit",
+        "number": "0850 840 83 71",
+        "href": "tel:+908508408371"
+      },
+      {
+        "label": "Sabit",
+        "number": "0324 814 88 33",
+        "href": "tel:+903248148833"
+      }
+    ],
+    "emails": [
+      {
+        "label": "Genel",
+        "address": "internet@binbirnet.com.tr"
+      },
+      {
+        "label": "KEP",
+        "address": "binbirnet@hs01.kep.tr"
+      }
+    ],
+    "whatsapp": {
+      "number": "905321561001",
+      "message": "Merhaba!!"
+    }
+  },
+  "address": {
+    "title": "Merkez Ofis",
+    "lines": [
+      "BinbirNet İnternet Bilişim",
+      "Saray Mah. Kıbrıs Cd. No: 9/17, 33640",
+      "Anamur – Mersin"
+    ],
+    "mapsUrl": "https://maps.app.goo.gl/usMxLfLxyFcKQ5eCA"
+  },
+  "social": [
+    {
+      "label": "F",
+      "href": "https://www.facebook.com/binbirnet",
+      "aria": "Facebook"
+    },
+    {
+      "label": "X",
+      "href": "https://twitter.com/binbirnet",
+      "aria": "X"
+    },
+    {
+      "label": "IG",
+      "href": "https://www.instagram.com/binbirnet/",
+      "aria": "Instagram"
+    },
+    {
+      "label": "TG",
+      "href": "https://t.me/binbirnet",
+      "aria": "Telegram"
+    },
+    {
+      "label": "WA",
+      "href": "https://web.whatsapp.com/send?phone=905321561001",
+      "aria": "WhatsApp"
+    }
+  ],
+  "externalLinks": {
+    "payment": "https://online.binbirnet.com.tr/odeme-yap",
+    "accountCenter": "https://online.binbirnet.com.tr/"
+  }
+}

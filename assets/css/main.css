@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    color-scheme: light;
+    --background: #FFFBF0;
+    --foreground: #334155;
+}
+
+.dark {
+    color-scheme: dark;
+    --background: #0f172a;
+    --foreground: #e2e8f0;
+}
+
+html {
+    background-color: var(--background);
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+/* Hero Slider Animation - 2 slides, 20s cycle (10s each) */
+@keyframes slide-infinite {
+
+    0%,
+    45% {
+        transform: translateX(0%);
+    }
+
+    50%,
+    95% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.slider-content {
+    display: flex;
+    width: 200%;
+    animation: slide-infinite 20s ease-in-out infinite;
+}
+
+.slider-item {
+    width: 50%;
+    flex-shrink: 0;
+}
+
+
+/* Icon hover effect */
+.nav-icon-hover:hover .material-symbols-outlined {
+    color: #FF7E5F;
+    transform: scale(1.2);
+}
+
+/* Package card hover */
+.package-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.package-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 60px -12px rgba(255, 126, 95, 0.15);
+}
+
+.package-card:hover .cta-button {
+    background-color: #e66b4f;
+}
+
+/* Material icons smooth transition */
+.material-symbols-outlined {
+    transition: all 0.2s ease;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Dot pattern background */
+.illustration-bg {
+    background-image: radial-gradient(circle at 2px 2px, rgba(255, 126, 95, 0.1) 1px, transparent 0);
+    background-size: 24px 24px;
+}
+
+/* Micro-animations */
+@keyframes bn-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bn-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.bn-animate-in {
+    animation: bn-fade-up .6s ease-out both;
+}
+
+.bn-animate-in.delay-1 {
+    animation-delay: .08s;
+}
+
+.bn-animate-in.delay-2 {
+    animation-delay: .16s;
+}
+
+.bn-animate-in.delay-3 {
+    animation-delay: .24s;
+}
+
+.bn-glow {
+    filter: blur(40px);
+    opacity: .6;
+    transform: translateZ(0);
+    animation: bn-float 6s ease-in-out infinite;
+}
+
+.bn-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.bn-shine::after {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -60%;
+    width: 60%;
+    height: 180%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .45), transparent);
+    transform: rotate(12deg);
+    transition: left .7s ease;
+}
+
+.bn-shine:hover::after {
+    left: 140%;
+}
+
+/* Hide reCAPTCHA badge */
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
+/* Hero Slider Animations */
+@keyframes lightSweep {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.light-sweep {
+    animation: lightSweep 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.slide-fade-out {
+    animation: fadeOut 0.5s ease-out 0.3s forwards;
+}
+
+.slide-fade-in {
+    animation: fadeIn 0.5s ease-out 0.5s forwards;
+    opacity: 0;
+}
+
+/* Anchor scroll offset for fixed header */
+html {
+    scroll-behavior: smooth;
+}
+
+[id] {
+    scroll-margin-top: 5rem;
+}
+
+/* Mobile Drawer Animations */
+@keyframes drawerSlideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes drawerSlideUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes overlayFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes overlayFadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.drawer-enter {
+    animation: drawerSlideDown 0.3s ease-out forwards;
+}
+
+.drawer-exit {
+    animation: drawerSlideUp 0.25s ease-in forwards;
+}
+
+.overlay-enter {
+    animation: overlayFadeIn 0.2s ease-out forwards;
+}
+
+.overlay-exit {
+    animation: overlayFadeOut 0.2s ease-in forwards;
+}

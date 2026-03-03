@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_nuxt/
+Sitemap: https://binbirnet.com.tr/sitemap.xml

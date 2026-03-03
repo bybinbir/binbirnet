@@ -1,0 +1,27 @@
+{
+  "name": "nuxt",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate && node scripts/copy-assets.mjs",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "hash-password": "node scripts/hash-password.mjs"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "nuxt": "^4.2.2",
+    "vue": "^3.5.27",
+    "vue-recaptcha-v3": "^2.0.1",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@types/bcryptjs": "^2.4.6",
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
+  }
+}

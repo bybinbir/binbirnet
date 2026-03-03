@@ -1,0 +1,8 @@
+{
+  "name": "binbirnet/php-backend",
+  "description": "BinbirNet PHP backend utilities",
+  "type": "project",
+  "require": {
+    "phpmailer/phpmailer": "^6.9"
+  }
+}

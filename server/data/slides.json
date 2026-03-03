@@ -1,0 +1,38 @@
+[
+  {
+    "id": "slide-1",
+    "image": "/img/hero/anamur.webp",
+    "imageAlt": "Anamur manzarasi",
+    "badge": "Mahallenizin Interneti",
+    "title": "Her Eve Mutluluk, <br /><span class=\"text-primary\">Her Cebe Uygun.</span>",
+    "description": "Karmasik sozlesmeler yok, sadece yuksek hiz ve samimi destek var.",
+    "buttonText": "Adresini Sorgula",
+    "buttonHref": "/altyapi-sorgula",
+    "buttonIcon": "waving_hand",
+    "order": 0
+  },
+  {
+    "id": "slide-2",
+    "image": "/img/hero/ikinciresim.webp",
+    "imageAlt": "Fiber baglanti",
+    "badge": "Teknoloji & Samimiyet",
+    "title": "Fiber Hizinda <br /><span class=\"text-primary\">Sicak Baglantilar.</span>",
+    "description": "Ailenizle film geceleri, arkadaslarinizla oyun keyfi icin en iyisi.",
+    "buttonText": "Paketlere Goz At",
+    "buttonHref": "/paketler",
+    "buttonIcon": "celebration",
+    "order": 1
+  },
+  {
+    "id": "slide-3",
+    "image": "/img/hero/komsunu-getir.webp",
+    "imageAlt": "Komsunu Getir Kampanyasi",
+    "badge": "\ud83c\udf81 Ozel Kampanya",
+    "title": "Komsunu Getir, <br /><span class=\"text-primary\">1 Ay Internet Kazan!</span>",
+    "description": "Bir komsunuzu veya arkadasinizi binbir.net ailesine katin, 1 ay ucretsiz internet kazanin!",
+    "buttonText": "Hemen Katil",
+    "buttonHref": "/kampanyalar/komsunu-getir",
+    "buttonIcon": "group_add",
+    "order": 2
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "header": [
+    { "id": "tarifeler", "label": "Tarifeler", "href": "/paketler", "icon": "local_offer", "external": false, "order": 0 },
+    { "id": "altyapi", "label": "Altyapı", "href": "/altyapi-sorgula", "icon": "cell_tower", "external": false, "order": 1 },
+    { "id": "hiz-testi", "label": "Hız Testi", "href": "/hiz-testi", "icon": "speed", "external": false, "order": 2 },
+    { "id": "iletisim", "label": "İletişim", "href": "/iletisim", "icon": "perm_phone_msg", "external": false, "order": 3 }
+  ],
+  "footerQuickLinks": [
+    { "id": "odeme", "label": "Hızlı Ödeme", "href": "https://online.binbirnet.com.tr/odeme-yap", "external": true, "order": 0 },
+    { "id": "hesabim", "label": "Online İşlem Merkezi", "href": "https://online.binbirnet.com.tr/", "external": true, "order": 1 },
+    { "id": "destek", "label": "Yardım & Destek", "href": "/destek", "external": false, "order": 2 },
+    { "id": "sss", "label": "Sık Sorulan Sorular", "href": "/destek", "external": false, "order": 3 },
+    { "id": "iletisim", "label": "İletişim", "href": "/iletisim", "external": false, "order": 4 }
+  ]
+}
