@@ -3,13 +3,13 @@
     <div class="w-full max-w-sm">
       <div class="text-center mb-8">
         <img src="/img/logo.webp" alt="BinbirNet" class="h-10 mx-auto mb-4" />
-        <h1 class="text-2xl font-extrabold text-slate-900 dark:text-white">Yonetim Paneli</h1>
-        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Giris yapin</p>
+        <h1 class="text-2xl font-extrabold text-slate-900 dark:text-white">Yönetim Paneli</h1>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Giriş yapın</p>
       </div>
 
       <form @submit.prevent="onSubmit" class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-xl space-y-4">
         <label class="block">
-          <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Kullanici Adi</span>
+          <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Kullanıcı Adı</span>
           <input
             v-model="username"
             type="text"
@@ -21,7 +21,7 @@
         </label>
 
         <label class="block">
-          <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Sifre</span>
+          <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Şifre</span>
           <input
             v-model="password"
             type="password"
@@ -39,13 +39,13 @@
           :disabled="loading"
           class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-xl font-extrabold transition-colors disabled:opacity-50"
         >
-          {{ loading ? 'Giris yapiliyor...' : 'Giris Yap' }}
+          {{ loading ? 'Giriş yapılıyor...' : 'Giriş Yap' }}
         </button>
       </form>
 
       <div class="text-center mt-4">
         <NuxtLink to="/" class="text-sm text-slate-500 hover:text-primary transition-colors">
-          Siteye don
+          Siteye dön
         </NuxtLink>
       </div>
     </div>
@@ -62,7 +62,7 @@ const password = ref('')
 const error = ref<string | null>(null)
 const loading = ref(false)
 
-// Zaten giris yapilmissa dashboard'a yonlendir
+// Zaten giriş yapılmışsa dashboard'a yönlendir
 onMounted(async () => {
   const isAuth = await checkAuth()
   if (isAuth) navigateTo('/admin')
@@ -75,7 +75,7 @@ async function onSubmit() {
     await login(username.value, password.value)
     navigateTo('/admin')
   } catch (e: any) {
-    error.value = e?.data?.statusMessage || 'Giris basarisiz. Lutfen tekrar deneyin.'
+    error.value = e?.data?.statusMessage || 'Giriş başarısız. Lütfen tekrar deneyin.'
   } finally {
     loading.value = false
   }

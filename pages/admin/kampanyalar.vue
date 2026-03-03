@@ -16,11 +16,11 @@
       <table class="w-full text-left">
         <thead class="bg-slate-50 dark:bg-slate-900/50">
           <tr>
-            <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300">Baslik</th>
-            <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300">Aciklama</th>
+            <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300">Başlık</th>
+            <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300">Açıklama</th>
             <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300">Durum</th>
-            <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300">Sira</th>
-            <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300 text-right">Islemler</th>
+            <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300">Sıra</th>
+            <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300 text-right">İşlemler</th>
           </tr>
         </thead>
         <tbody>
@@ -58,17 +58,17 @@
     <div v-if="showModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50" @click.self="showModal = false">
       <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 w-full max-w-lg shadow-2xl">
         <h2 class="text-xl font-extrabold text-slate-900 dark:text-white mb-6">
-          {{ editingId ? 'Kampanya Duzenle' : 'Yeni Kampanya' }}
+          {{ editingId ? 'Kampanya Düzenle' : 'Yeni Kampanya' }}
         </h2>
 
         <form @submit.prevent="handleSubmit" class="space-y-4">
           <div>
-            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Baslik</label>
+            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Başlık</label>
             <input v-model="form.title" required class="mt-1 w-full border border-slate-200 dark:border-slate-700 rounded-xl p-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-white" />
           </div>
 
           <div>
-            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Aciklama</label>
+            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Açıklama</label>
             <textarea v-model="form.description" required rows="3" class="mt-1 w-full border border-slate-200 dark:border-slate-700 rounded-xl p-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-white"></textarea>
           </div>
 
@@ -81,7 +81,7 @@
               </select>
             </div>
             <div>
-              <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Siralama</label>
+              <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Sıralama</label>
               <input v-model.number="form.order" type="number" class="mt-1 w-full border border-slate-200 dark:border-slate-700 rounded-xl p-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-white" />
             </div>
           </div>
@@ -90,7 +90,7 @@
 
           <div class="flex justify-end gap-3 pt-2">
             <button type="button" @click="showModal = false" class="px-6 py-3 rounded-xl border border-slate-200 dark:border-slate-700 font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
-              Iptal
+              İptal
             </button>
             <button type="submit" :disabled="saving" class="px-6 py-3 rounded-xl bg-primary hover:bg-primary/90 text-white font-bold transition-colors disabled:opacity-50">
               {{ saving ? 'Kaydediliyor...' : 'Kaydet' }}
@@ -151,7 +151,7 @@ async function handleSubmit() {
     await refresh()
     refreshNuxtData('campaigns')
   } catch (e: any) {
-    formError.value = e?.data?.statusMessage || 'Bir hata olustu'
+    formError.value = e?.data?.statusMessage || 'Bir hata oluştu'
   } finally {
     saving.value = false
   }
@@ -163,18 +163,18 @@ async function toggleActive(c: Campaign) {
     await refresh()
     refreshNuxtData('campaigns')
   } catch (e: any) {
-    alert(e?.data?.statusMessage || 'Islem basarisiz')
+    alert(e?.data?.statusMessage || 'İşlem başarısız')
   }
 }
 
 async function handleDelete(id: string) {
-  if (!confirm('Bu kampanyayi silmek istediginize emin misiniz?')) return
+  if (!confirm('Bu kampanyayı silmek istediğinize emin misiniz?')) return
   try {
     await $fetch(`/api/admin/campaigns/${id}`, { method: 'DELETE' })
     await refresh()
     refreshNuxtData('campaigns')
   } catch (e: any) {
-    alert(e?.data?.statusMessage || 'Silme islemi basarisiz')
+    alert(e?.data?.statusMessage || 'Silme işlemi başarısız')
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-8">SEO Yonetimi</h1>
+    <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-8">SEO Yönetimi</h1>
 
     <!-- Tabs -->
     <div class="flex gap-2 mb-6">
@@ -16,7 +16,7 @@
         class="px-4 py-2 rounded-xl font-semibold text-sm transition-colors"
         :class="activeTab === 'pages' ? 'bg-primary text-white' : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700'"
       >
-        Sayfa Bazli SEO
+        Sayfa Bazlı SEO
       </button>
     </div>
 
@@ -26,14 +26,14 @@
         <div>
           <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Title Template</label>
           <input v-model="form.global.titleTemplate" class="mt-1 w-full border border-slate-200 dark:border-slate-700 rounded-xl p-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-white" />
-          <p class="text-xs text-slate-400 mt-1">%s yerine sayfa basliği gelir</p>
+          <p class="text-xs text-slate-400 mt-1">%s yerine sayfa başlığı gelir</p>
         </div>
         <div>
-          <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Varsayilan Baslik</label>
+          <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Varsayılan Başlık</label>
           <input v-model="form.global.defaultTitle" class="mt-1 w-full border border-slate-200 dark:border-slate-700 rounded-xl p-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-white" />
         </div>
         <div>
-          <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Varsayilan Aciklama</label>
+          <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Varsayılan Açıklama</label>
           <textarea v-model="form.global.description" rows="2" class="mt-1 w-full border border-slate-200 dark:border-slate-700 rounded-xl p-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-white"></textarea>
         </div>
         <div>
@@ -69,10 +69,10 @@
         </div>
       </div>
 
-      <!-- Sayfa Bazli SEO -->
+      <!-- Sayfa Bazlı SEO -->
       <div v-if="activeTab === 'pages'" class="space-y-4">
         <div>
-          <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Sayfa Sec</label>
+          <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Sayfa Seç</label>
           <select v-model="selectedPage" class="mt-1 w-full border border-slate-200 dark:border-slate-700 rounded-xl p-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-white">
             <option v-for="page in pageOptions" :key="page" :value="page">{{ page }}</option>
           </select>
@@ -80,15 +80,15 @@
 
         <div v-if="selectedPage" class="space-y-4 mt-4">
           <div>
-            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Title</label>
+            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Başlık</label>
             <input v-model="currentPageSeo.title" class="mt-1 w-full border border-slate-200 dark:border-slate-700 rounded-xl p-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-white" />
           </div>
           <div>
-            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Description</label>
+            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Açıklama</label>
             <textarea v-model="currentPageSeo.description" rows="3" class="mt-1 w-full border border-slate-200 dark:border-slate-700 rounded-xl p-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-white"></textarea>
           </div>
           <div>
-            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Keywords</label>
+            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Anahtar Kelimeler</label>
             <input v-model="currentPageSeo.keywords" class="mt-1 w-full border border-slate-200 dark:border-slate-700 rounded-xl p-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-white" />
           </div>
         </div>
@@ -140,7 +140,7 @@ async function handleSave() {
     await refresh()
     refreshNuxtData('seo')
   } catch (e: any) {
-    formError.value = e?.data?.statusMessage || 'Bir hata olustu'
+    formError.value = e?.data?.statusMessage || 'Bir hata oluştu'
   } finally {
     saving.value = false
   }

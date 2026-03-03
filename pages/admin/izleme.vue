@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex items-center justify-between mb-8">
-      <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Izleme Kodlari</h1>
+      <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">İzleme Kodları</h1>
       <button
         @click="addScript"
         class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 transition-colors"
@@ -66,12 +66,12 @@
           </div>
 
           <div>
-            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Tur</label>
+            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Tür</label>
             <select v-model="script.type" class="mt-1 w-full border border-slate-200 dark:border-slate-700 rounded-xl p-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-white">
               <option value="ga4">Google Analytics 4</option>
               <option value="gtm">Google Tag Manager</option>
               <option value="facebook_pixel">Facebook Pixel</option>
-              <option value="custom">Ozel Script</option>
+              <option value="custom">Özel Script</option>
             </select>
           </div>
         </div>
@@ -104,7 +104,7 @@ watch(trackingData, (val) => {
 }, { immediate: true })
 
 function scriptTypeLabel(type: string) {
-  const map: Record<string, string> = { ga4: 'Google Analytics 4', gtm: 'Google Tag Manager', facebook_pixel: 'Facebook Pixel', custom: 'Ozel Script' }
+  const map: Record<string, string> = { ga4: 'Google Analytics 4', gtm: 'Google Tag Manager', facebook_pixel: 'Facebook Pixel', custom: 'Özel Script' }
   return map[type] ?? type
 }
 
@@ -128,7 +128,7 @@ async function handleSave() {
     await refresh()
     refreshNuxtData('tracking')
   } catch (e: any) {
-    formError.value = e?.data?.statusMessage || 'Bir hata olustu'
+    formError.value = e?.data?.statusMessage || 'Bir hata oluştu'
   } finally {
     saving.value = false
   }

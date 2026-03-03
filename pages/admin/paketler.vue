@@ -16,12 +16,12 @@
       <table class="w-full text-left">
         <thead class="bg-slate-50 dark:bg-slate-900/50">
           <tr>
-            <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300">Paket Adi</th>
-            <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300">Tur</th>
-            <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300">Hiz</th>
+            <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300">Paket Adı</th>
+            <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300">Tür</th>
+            <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300">Hız</th>
             <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300">Fiyat</th>
             <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300">Badge</th>
-            <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300 text-right">Islemler</th>
+            <th class="p-4 font-bold text-sm text-slate-700 dark:text-slate-300 text-right">İşlemler</th>
           </tr>
         </thead>
         <tbody>
@@ -65,17 +65,17 @@
     <div v-if="showModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50" @click.self="showModal = false">
       <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 w-full max-w-lg shadow-2xl">
         <h2 class="text-xl font-extrabold text-slate-900 dark:text-white mb-6">
-          {{ editingId ? 'Paketi Duzenle' : 'Yeni Paket' }}
+          {{ editingId ? 'Paketi Düzenle' : 'Yeni Paket' }}
         </h2>
 
         <form @submit.prevent="handleSubmit" class="space-y-4">
           <div>
-            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Paket Adi</label>
+            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Paket Adı</label>
             <input v-model="form.name" required class="mt-1 w-full border border-slate-200 dark:border-slate-700 rounded-xl p-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-white" />
           </div>
 
           <div>
-            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Tur</label>
+            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Tür</label>
             <select v-model="form.type" class="mt-1 w-full border border-slate-200 dark:border-slate-700 rounded-xl p-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-white">
               <option value="WIRELESS">Kablosuz (WIRELESS)</option>
               <option value="WIRED">Fiber (WIRED)</option>
@@ -84,11 +84,11 @@
 
           <div class="grid grid-cols-2 gap-4">
             <div>
-              <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Indirme (Mbps)</label>
+              <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">İndirme (Mbps)</label>
               <input v-model.number="form.downMbps" type="number" required class="mt-1 w-full border border-slate-200 dark:border-slate-700 rounded-xl p-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-white" />
             </div>
             <div>
-              <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Yukleme (Mbps)</label>
+              <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Yükleme (Mbps)</label>
               <input v-model.number="form.upMbps" type="number" required class="mt-1 w-full border border-slate-200 dark:border-slate-700 rounded-xl p-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-white" />
             </div>
           </div>
@@ -116,7 +116,7 @@
 
           <div class="flex justify-end gap-3 pt-2">
             <button type="button" @click="showModal = false" class="px-6 py-3 rounded-xl border border-slate-200 dark:border-slate-700 font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
-              Iptal
+              İptal
             </button>
             <button type="submit" :disabled="saving" class="px-6 py-3 rounded-xl bg-primary hover:bg-primary/90 text-white font-bold transition-colors disabled:opacity-50">
               {{ saving ? 'Kaydediliyor...' : 'Kaydet' }}
@@ -183,20 +183,20 @@ async function handleSubmit() {
     await refresh()
     refreshNuxtData('packages')
   } catch (e: any) {
-    formError.value = e?.data?.statusMessage || 'Bir hata olustu'
+    formError.value = e?.data?.statusMessage || 'Bir hata oluştu'
   } finally {
     saving.value = false
   }
 }
 
 async function handleDelete(id: string) {
-  if (!confirm('Bu paketi silmek istediginize emin misiniz?')) return
+  if (!confirm('Bu paketi silmek istediğinize emin misiniz?')) return
   try {
     await $fetch(`/api/admin/packages/${id}`, { method: 'DELETE' })
     await refresh()
     refreshNuxtData('packages')
   } catch (e: any) {
-    alert(e?.data?.statusMessage || 'Silme islemi basarisiz')
+    alert(e?.data?.statusMessage || 'Silme işlemi başarısız')
   }
 }
 </script>

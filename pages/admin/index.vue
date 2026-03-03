@@ -2,8 +2,8 @@
   <div>
     <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-8">Dashboard</h1>
 
-    <!-- Icerik Yonetimi -->
-    <h2 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">Icerik Yonetimi</h2>
+    <!-- İçerik Yönetimi -->
+    <h2 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">İçerik Yönetimi</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
       <!-- Paketler -->
       <NuxtLink
@@ -19,7 +19,7 @@
             <div class="text-3xl font-extrabold text-slate-900 dark:text-white">{{ packages?.length ?? 0 }}</div>
           </div>
         </div>
-        <div class="text-sm text-primary font-semibold group-hover:underline">Yonet &rarr;</div>
+        <div class="text-sm text-primary font-semibold group-hover:underline">Yönet &rarr;</div>
       </NuxtLink>
 
       <!-- Slider -->
@@ -36,7 +36,7 @@
             <div class="text-3xl font-extrabold text-slate-900 dark:text-white">{{ slides?.length ?? 0 }}</div>
           </div>
         </div>
-        <div class="text-sm text-primary font-semibold group-hover:underline">Yonet &rarr;</div>
+        <div class="text-sm text-primary font-semibold group-hover:underline">Yönet &rarr;</div>
       </NuxtLink>
 
       <!-- Kampanyalar -->
@@ -53,12 +53,12 @@
             <div class="text-3xl font-extrabold text-slate-900 dark:text-white">{{ campaigns?.length ?? 0 }}</div>
           </div>
         </div>
-        <div class="text-sm text-primary font-semibold group-hover:underline">Yonet &rarr;</div>
+        <div class="text-sm text-primary font-semibold group-hover:underline">Yönet &rarr;</div>
       </NuxtLink>
     </div>
 
-    <!-- Site Ayarlari -->
-    <h2 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">Site Ayarlari</h2>
+    <!-- Site Ayarları -->
+    <h2 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">Site Ayarları</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- SEO -->
       <NuxtLink
@@ -70,14 +70,14 @@
             <span class="material-symbols-outlined text-2xl text-purple-500">search</span>
           </div>
           <div>
-            <div class="text-sm font-semibold text-slate-500 dark:text-slate-400">SEO Sayfalari</div>
+            <div class="text-sm font-semibold text-slate-500 dark:text-slate-400">SEO Sayfaları</div>
             <div class="text-3xl font-extrabold text-slate-900 dark:text-white">{{ seoPageCount }}</div>
           </div>
         </div>
-        <div class="text-sm text-primary font-semibold group-hover:underline">Yonet &rarr;</div>
+        <div class="text-sm text-primary font-semibold group-hover:underline">Yönet &rarr;</div>
       </NuxtLink>
 
-      <!-- Izleme -->
+      <!-- İzleme -->
       <NuxtLink
         to="/admin/izleme"
         class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg transition-shadow group"
@@ -87,14 +87,14 @@
             <span class="material-symbols-outlined text-2xl text-cyan-600">analytics</span>
           </div>
           <div>
-            <div class="text-sm font-semibold text-slate-500 dark:text-slate-400">Aktif Izleme</div>
+            <div class="text-sm font-semibold text-slate-500 dark:text-slate-400">Aktif İzleme</div>
             <div class="text-3xl font-extrabold text-slate-900 dark:text-white">{{ activeTrackingCount }}</div>
           </div>
         </div>
-        <div class="text-sm text-primary font-semibold group-hover:underline">Yonet &rarr;</div>
+        <div class="text-sm text-primary font-semibold group-hover:underline">Yönet &rarr;</div>
       </NuxtLink>
 
-      <!-- Site Ayarlari -->
+      <!-- Site Ayarları -->
       <NuxtLink
         to="/admin/ayarlar"
         class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg transition-shadow group"
@@ -104,11 +104,11 @@
             <span class="material-symbols-outlined text-2xl text-slate-600 dark:text-slate-300">settings</span>
           </div>
           <div>
-            <div class="text-sm font-semibold text-slate-500 dark:text-slate-400">Site Ayarlari</div>
-            <div class="text-lg font-extrabold text-slate-900 dark:text-white">Duzenle</div>
+            <div class="text-sm font-semibold text-slate-500 dark:text-slate-400">Site Ayarları</div>
+            <div class="text-lg font-extrabold text-slate-900 dark:text-white">Düzenle</div>
           </div>
         </div>
-        <div class="text-sm text-primary font-semibold group-hover:underline">Yonet &rarr;</div>
+        <div class="text-sm text-primary font-semibold group-hover:underline">Yönet &rarr;</div>
       </NuxtLink>
     </div>
   </div>

@@ -7,7 +7,7 @@
         <NuxtLink to="/" class="flex items-center gap-2">
           <img src="/img/logo.webp" alt="BinbirNet" class="h-8 w-auto" />
         </NuxtLink>
-        <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-semibold">Yonetim Paneli</div>
+        <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-semibold">Yönetim Paneli</div>
       </div>
 
       <!-- Navigation -->
@@ -35,7 +35,7 @@
           class="flex items-center gap-2 w-full px-4 py-2 rounded-xl text-sm font-semibold text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
         >
           <span class="material-symbols-outlined text-lg">logout</span>
-          Cikis Yap
+          Çıkış Yap
         </button>
       </div>
     </aside>
@@ -58,7 +58,7 @@ const isActive = (path: string) => {
 
 const navItems = [
   { to: '/admin', icon: 'dashboard', label: 'Dashboard' },
-  // Icerik
+  // İçerik
   { to: '/admin/paketler', icon: 'local_offer', label: 'Paketler', separator: true },
   { to: '/admin/slider', icon: 'slideshow', label: 'Slider' },
   { to: '/admin/kampanyalar', icon: 'campaign', label: 'Kampanyalar' },
@@ -66,7 +66,7 @@ const navItems = [
   { to: '/admin/navigasyon', icon: 'menu', label: 'Navigasyon' },
   // Ayarlar
   { to: '/admin/seo', icon: 'search', label: 'SEO', separator: true },
-  { to: '/admin/izleme', icon: 'analytics', label: 'Izleme Kodlari' },
-  { to: '/admin/ayarlar', icon: 'settings', label: 'Site Ayarlari' },
+  { to: '/admin/izleme', icon: 'analytics', label: 'İzleme Kodları' },
+  { to: '/admin/ayarlar', icon: 'settings', label: 'Site Ayarları' },
 ]
 </script>
