@@ -2,19 +2,20 @@ import bcrypt from 'bcryptjs'
 
 export default defineEventHandler(async (event) => {
   const body = await readBody<{ username: string; password: string }>(event)
-  const config = useRuntimeConfig()
 
   if (!body.username || !body.password) {
-    throw createError({ statusCode: 400, statusMessage: 'Kullanici adi ve sifre gerekli' })
+    throw createError({ statusCode: 400, statusMessage: 'Kullanıcı adı ve şifre gerekli' })
   }
 
-  const validUser = body.username === config.adminUser
-  const validPass = config.adminPasswordHash
-    ? await bcrypt.compare(body.password, config.adminPasswordHash as string)
+  const auth = await readJsonFile<{ user: string; passwordHash: string }>('auth.json')
+
+  const validUser = body.username === auth.user
+  const validPass = auth.passwordHash
+    ? await bcrypt.compare(body.password, auth.passwordHash)
     : false
 
   if (!validUser || !validPass) {
-    throw createError({ statusCode: 401, statusMessage: 'Gecersiz kullanici adi veya sifre' })
+    throw createError({ statusCode: 401, statusMessage: 'Geçersiz kullanıcı adı veya şifre' })
   }
 
   const session = await getAdminSession(event)
