@@ -13,13 +13,18 @@ export async function sendMail(subject: string, bodyHtml: string) {
     },
   });
 
-  await transporter.sendMail({
-    from: `"${config.mailFromName}" <${config.mailFrom}>`,
-    to: config.mailTo,
-    subject,
-    html: bodyHtml,
-    text: bodyHtml.replace(/<[^>]+>/g, ''),
-  });
+  try {
+    await transporter.sendMail({
+      from: `"${config.mailFromName}" <${config.mailFrom}>`,
+      to: config.mailTo,
+      subject,
+      html: bodyHtml,
+      text: bodyHtml.replace(/<[^>]+>/g, ''),
+    });
+  } catch (err: unknown) {
+    console.error('[SMTP ERROR]', err);
+    throw err;
+  }
 }
 
 export async function verifyTurnstile(token: string): Promise<boolean> {
