@@ -348,13 +348,13 @@ const fullAddress = computed(() => {
 
 async function fetchOptions(endpoint: string, params: Record<string, string>) {
   const qs = new URLSearchParams({ endpoint, ...params });
-  const data = await $fetch<{ options: Option[] }>(`${config.public.API_BASE}infra.php?${qs.toString()}`);
+  const data = await $fetch<{ options: Option[] }>(`/api/infra?${qs.toString()}`);
   return data.options ?? [];
 }
 
 async function fetchDaireSorgu(kod: string, ilce_kodu: string) {
   const qs = new URLSearchParams({ endpoint: "dairesorgula", kod, ilce_kodu });
-  return await $fetch<InfraResult>(`${config.public.API_BASE}infra.php?${qs.toString()}`);
+  return await $fetch<InfraResult>(`/api/infra?${qs.toString()}`);
 }
 
 async function initIlceler() {
