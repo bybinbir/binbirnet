@@ -99,7 +99,7 @@ async function onSubmit() {
       payload.token = token;
     }
 
-    const res = await $fetch<{ success?: boolean, error?: string }>(`${config.public.API_BASE}contact.php`, {
+    const res = await $fetch<{ success?: boolean, error?: string }>(`/api/contact`, {
       method: "POST",
       body: payload
     });

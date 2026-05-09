@@ -64,6 +64,14 @@ export default defineNuxtConfig({
     sessionSecret: process.env.NUXT_SESSION_SECRET || 'default-secret-change-in-production!',
     adminUser: process.env.NUXT_ADMIN_USER || 'admin',
     adminPasswordHash: process.env.NUXT_ADMIN_PASSWORD_HASH || '',
+    smtpHost: process.env.NUXT_SMTP_HOST || 'm.wifitelekom.com',
+    smtpPort: process.env.NUXT_SMTP_PORT || '587',
+    smtpUser: process.env.NUXT_SMTP_USER || 'binbir-web@wifitelekom.com',
+    smtpPass: process.env.NUXT_SMTP_PASS || 'Binbir1001',
+    mailFrom: process.env.NUXT_MAIL_FROM || 'binbir-web@wifitelekom.com',
+    mailFromName: process.env.NUXT_MAIL_FROM_NAME || 'BinbirNet Web',
+    mailTo: process.env.NUXT_MAIL_TO || 'internet@binbirnet.com.tr',
+    recaptchaSecret: process.env.NUXT_RECAPTCHA_SECRET || '6LcVb04sAAAAAPA9rf2IICT1e1qvxLqU9flC0rwV',
     // Client-side keys
     public: {
       RECAPTCHA_SITE_KEY: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY,
