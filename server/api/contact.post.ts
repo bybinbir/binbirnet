@@ -40,7 +40,8 @@ export default defineEventHandler(async (event) => {
   try {
     await sendMail(subject, html);
     return { success: true };
-  } catch {
-    throw createError({ statusCode: 500, message: 'Mail gönderilemedi' });
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : String(err);
+    throw createError({ statusCode: 500, message: `Mail gönderilemedi: ${msg}` });
   }
 });
