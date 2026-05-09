@@ -102,20 +102,12 @@
         {{ loading ? "Gönderiliyor…" : "Başvuruyu Gönder" }}
       </button>
     </div>
-    <p class="text-xs text-slate-400 dark:text-slate-500 text-center mt-4">
-      Bu site reCAPTCHA ile korunmaktadır ve Google
-      <a href="https://policies.google.com/privacy" class="underline hover:text-slate-600 dark:hover:text-slate-300">Gizlilik Politikası</a> ile
-      <a href="https://policies.google.com/terms" class="underline hover:text-slate-600 dark:hover:text-slate-300">Hizmet Şartları</a> geçerlidir.
-    </p>
+    <NuxtTurnstile v-model="token" class="mt-2" />
   </form>
 </template>
 
 <script setup lang="ts">
-import { useReCaptcha } from 'vue-recaptcha-v3';
 import type { Package } from '~/types';
-
-const config = useRuntimeConfig();
-const siteKey = config.public.RECAPTCHA_SITE_KEY as string | undefined;
 
 const props = defineProps<{
   initialPkgId: string | null;
@@ -131,10 +123,7 @@ onMounted(() => {
   }
 });
 
-const recaptchaInstance = useReCaptcha();
-const executeRecaptcha = recaptchaInstance?.executeRecaptcha;
-const recaptchaLoaded = recaptchaInstance?.recaptchaLoaded;
-
+const token = ref('');
 const adsoyad = ref("");
 const telefon = ref("");
 const email = ref("");
@@ -149,13 +138,6 @@ const pkgObj = computed(() => props.packages.find(p => p.id === pkg.value));
 
 async function onSubmit() {
   err.value = null;
-
-  if (siteKey) {
-    if (!recaptchaLoaded || !unref(recaptchaLoaded)) {
-      err.value = "Guvenlik dogrulamasi yukleniyor, lutfen bekleyin...";
-      return;
-    }
-  }
 
   if (!kvkk.value) {
     err.value = "KVKK onayi gerekli.";
@@ -183,16 +165,9 @@ async function onSubmit() {
       paket: pkg.value,
       infra: infra.value,
       kvkk: kvkk.value,
-      hp: hp.value
+      hp: hp.value,
+      token: token.value,
     };
-
-    if (siteKey) {
-      if (!executeRecaptcha) {
-        throw new Error("ReCAPTCHA baslatilamadi.");
-      }
-      const token = await executeRecaptcha("apply_submit");
-      payload.token = token;
-    }
 
     const res = await $fetch<{ success?: boolean, error?: string }>(`/api/apply`, {
       method: "POST",

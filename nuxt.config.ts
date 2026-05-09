@@ -55,8 +55,13 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/turnstile',
   ],
+
+  turnstile: {
+    siteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY || '',
+  },
 
   // Runtime Config (Environment Variables)
   runtimeConfig: {
@@ -71,10 +76,11 @@ export default defineNuxtConfig({
     mailFrom: process.env.NUXT_MAIL_FROM || 'binbir-web@wifitelekom.com',
     mailFromName: process.env.NUXT_MAIL_FROM_NAME || 'BinbirNet Web',
     mailTo: process.env.NUXT_MAIL_TO || 'internet@binbirnet.com.tr',
-    recaptchaSecret: process.env.NUXT_RECAPTCHA_SECRET || '6LcVb04sAAAAAPA9rf2IICT1e1qvxLqU9flC0rwV',
+    turnstile: {
+      secretKey: process.env.NUXT_TURNSTILE_SECRET_KEY || '',
+    },
     // Client-side keys
     public: {
-      RECAPTCHA_SITE_KEY: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY,
       API_BASE: process.env.NUXT_PUBLIC_API_BASE || '/php-backend/',
       IL_KODU: '33',
       IL_ADI: 'Mersin'

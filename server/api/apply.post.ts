@@ -1,4 +1,4 @@
-import { sendMail, verifyRecaptcha } from '~/server/utils/mail';
+import { sendMail, verifyTurnstile } from '~/server/utils/mail';
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
@@ -19,7 +19,7 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, message: 'Eksik bilgi' });
   }
 
-  if (!await verifyRecaptcha(token)) {
+  if (!await verifyTurnstile(token)) {
     throw createError({ statusCode: 400, message: 'Robot doğrulaması başarısız' });
   }
 

@@ -35,24 +35,12 @@
         {{ loading ? "Gönderiliyor…" : "Mesajı Gönder" }}
       </button>
     </div>
-    <p class="text-xs text-slate-400 dark:text-slate-500 text-center mt-4">
-      Bu site reCAPTCHA ile korunmaktadır ve Google
-      <a href="https://policies.google.com/privacy" class="underline hover:text-slate-600 dark:hover:text-slate-300">Gizlilik Politikası</a> ile
-      <a href="https://policies.google.com/terms" class="underline hover:text-slate-600 dark:hover:text-slate-300">Hizmet Şartları</a> geçerlidir.
-    </p>
+    <NuxtTurnstile v-model="token" class="mt-2" />
   </form>
 </template>
 
 <script setup lang="ts">
-import { useReCaptcha } from 'vue-recaptcha-v3';
-
-const config = useRuntimeConfig();
-const siteKey = config.public.RECAPTCHA_SITE_KEY as string | undefined;
-
-const recaptchaInstance = useReCaptcha();
-const executeRecaptcha = recaptchaInstance?.executeRecaptcha;
-const recaptchaLoaded = recaptchaInstance?.recaptchaLoaded;
-
+const token = ref('');
 const adsoyad = ref("");
 const telefon = ref("");
 const email = ref("");
@@ -67,14 +55,6 @@ const ok = ref(false);
 async function onSubmit() {
   err.value = null;
 
-  if (siteKey) {
-    // Check if loaded (handling simplified type check)
-    if (!recaptchaLoaded || !unref(recaptchaLoaded)) {
-      err.value = "ReCAPTCHA yuklenemedi, lutfen sayfayi yenileyin.";
-      return;
-    }
-  }
-
   if (!adsoyad.value.trim()) { err.value = "Ad Soyad gerekli."; return; }
   if (!telefon.value.trim()) { err.value = "Telefon gerekli."; return; }
   if (!konu.value.trim()) { err.value = "Konu gerekli."; return; }
@@ -88,16 +68,9 @@ async function onSubmit() {
       email: email.value,
       konu: konu.value,
       mesaj: mesaj.value,
-      hp: hp.value
+      hp: hp.value,
+      token: token.value,
     };
-
-    if (siteKey) {
-      if (!executeRecaptcha) {
-        throw new Error("ReCAPTCHA baslatilamadi.");
-      }
-      const token = await executeRecaptcha("contact_submit");
-      payload.token = token;
-    }
 
     const res = await $fetch<{ success?: boolean, error?: string }>(`/api/contact`, {
       method: "POST",

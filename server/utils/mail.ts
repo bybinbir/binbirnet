@@ -22,23 +22,21 @@ export async function sendMail(subject: string, bodyHtml: string) {
   });
 }
 
-export async function verifyRecaptcha(token: string): Promise<boolean> {
+export async function verifyTurnstile(token: string): Promise<boolean> {
   const config = useRuntimeConfig();
-  if (!config.public.RECAPTCHA_SITE_KEY) return true;
+  const secretKey = config.turnstile?.secretKey;
+  if (!secretKey) return true;
   if (!token) return false;
   try {
-    const res = await $fetch<{ success: boolean; score?: number }>(
-      'https://www.google.com/recaptcha/api/siteverify',
+    const res = await $fetch<{ success: boolean }>(
+      'https://challenges.cloudflare.com/turnstile/v0/siteverify',
       {
         method: 'POST',
-        body: new URLSearchParams({
-          secret: config.recaptchaSecret,
-          response: token,
-        }).toString(),
+        body: new URLSearchParams({ secret: secretKey, response: token }).toString(),
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       }
     );
-    return res.success && (res.score ?? 1.0) >= 0.5;
+    return res.success;
   } catch {
     return false;
   }
