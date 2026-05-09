@@ -23,8 +23,9 @@ export async function sendMail(subject: string, bodyHtml: string) {
 }
 
 export async function verifyRecaptcha(token: string): Promise<boolean> {
-  if (!token) return false;
   const config = useRuntimeConfig();
+  if (!config.public.RECAPTCHA_SITE_KEY) return true;
+  if (!token) return false;
   try {
     const res = await $fetch<{ success: boolean; score?: number }>(
       'https://www.google.com/recaptcha/api/siteverify',
