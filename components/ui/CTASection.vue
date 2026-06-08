@@ -27,7 +27,18 @@
 
       <!-- Button -->
       <div class="relative z-10 shrink-0">
+        <a
+          v-if="isExternal"
+          :href="buttonHref"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-12 py-6 rounded-3xl font-extrabold text-xl transition-all shadow-2xl hover:scale-105 active:scale-95 block no-underline"
+          :class="isPrimary ? 'bg-white text-primary hover:bg-orange-50' : 'bg-primary text-white hover:bg-primary/90'"
+        >
+          {{ buttonText }}
+        </a>
         <NuxtLink
+          v-else
           :to="buttonHref"
           class="px-12 py-6 rounded-3xl font-extrabold text-xl transition-all shadow-2xl hover:scale-105 active:scale-95 block"
           :class="isPrimary ? 'bg-white text-primary hover:bg-orange-50' : 'bg-primary text-white hover:bg-primary/90'"
@@ -77,4 +88,5 @@ const props = withDefaults(defineProps<CTASectionProps>(), {
 });
 
 const isPrimary = computed(() => props.variant === "primary");
+const isExternal = computed(() => /^https?:\/\//i.test(props.buttonHref));
 </script>

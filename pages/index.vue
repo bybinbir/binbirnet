@@ -26,6 +26,21 @@
       </div>
     </section>
 
+    <!-- Online Subscription CTA -->
+    <UiCTASection
+      variant="white"
+      title="E-Devlet ile Online Abone Olun"
+      description="Eve gelmemize veya ofise gelmenize gerek yok. E-Devlet üzerinden kimlik doğrulamasıyla sözleşmenizi dakikalar içinde tamamlayın. Online Abone Ol butonuna basarak başlayabilirsiniz."
+      buttonText="Online Abone Ol"
+      buttonHref="https://binbirnet.com.tr/online_basvuru"
+      buttonSubtext="E-Devlet ile güvenli imza"
+      :features="[
+        { icon: 'verified_user', text: 'E-Devlet Doğrulama' },
+        { icon: 'description', text: 'Online Sözleşme' },
+        { icon: 'schedule', text: 'Dakikalar İçinde' }
+      ]"
+    />
+
     <!-- CTA Section -->
     <UiCTASection
       :title="homepage?.cta.title ?? 'Bölgenizde Var mıyız?'"

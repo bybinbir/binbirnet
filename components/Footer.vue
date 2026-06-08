@@ -119,7 +119,8 @@
             <p class="m-0"><NuxtLink class="hover:text-primary" to="/yasal/kvkk">KVKK Metni</NuxtLink></p>
             <p class="m-0"><NuxtLink class="hover:text-primary" to="/yasal/gizlilik-politikasi">Gizlilik Politikası</NuxtLink></p>
             <p class="m-0"><NuxtLink class="hover:text-primary" to="/yasal/cerez-politikasi">Çerez Politikası</NuxtLink></p>
-            <p class="m-0"><NuxtLink class="hover:text-primary" to="/yasal/iptal-iade">İptal &amp; İade Prosedürü</NuxtLink></p>
+            <p class="m-0"><NuxtLink class="hover:text-primary" to="/yasal/iptal-iade">İptal &amp; İade</NuxtLink></p>
+            <p class="m-0"><NuxtLink class="hover:text-primary" to="/yasal/bgys-politikasi">BGYS Politikası</NuxtLink></p>
             <p class="m-0"><NuxtLink class="hover:text-primary" to="/guvenli-internet">Güvenli İnternet</NuxtLink></p>
           </div>
 
