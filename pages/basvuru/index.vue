@@ -78,7 +78,7 @@ let initialPkgId = typeof paramPkg === 'string' ? paramPkg : null;
 const pkgs = packages.value ?? []
 if (!initialPkgId && result.value && pkgs.length > 0) {
   const rec = recommendPackage(result.value, pkgs);
-  initialPkgId = rec.primaryType === "wifi" ? rec.wifi.id : rec.wired.id;
+  initialPkgId = rec.wifi.id;
 }
 
 if (initialPkgId && !pkgs.some(p => p.id === initialPkgId)) {

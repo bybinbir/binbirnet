@@ -140,21 +140,16 @@
         </div>
       </div>
 
-      <!-- Önerilen Paketler -->
+      <!-- Önerilen Paket -->
       <div>
         <h2 class="text-xl font-extrabold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
           <span class="material-symbols-outlined text-primary">recommend</span>
-          Önerilen Paketler
+          Önerilen Paket
         </h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <!-- WiFi Paketi -->
-          <div
-            class="rounded-3xl border-2 p-6 transition-colors"
-            :class="recommended.primaryType === 'wifi'
-              ? 'border-primary bg-gradient-to-br from-primary/10 to-white dark:to-slate-900 shadow-xl'
-              : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900'"
-          >
-            <div v-if="recommended.primaryType === 'wifi'" class="inline-flex items-center gap-1 text-xs font-extrabold px-3 py-1 rounded-full bg-primary text-white mb-4">
+        <div class="max-w-md">
+          <!-- Kablosuz Paketi -->
+          <div class="rounded-3xl border-2 border-primary bg-gradient-to-br from-primary/10 to-white dark:to-slate-900 shadow-xl p-6 transition-colors">
+            <div class="inline-flex items-center gap-1 text-xs font-extrabold px-3 py-1 rounded-full bg-primary text-white mb-4">
               <span class="material-symbols-outlined text-sm">star</span>
               Önerilen
             </div>
@@ -178,7 +173,7 @@
               <div class="text-sm text-slate-600 dark:text-slate-400">
                 <span class="font-bold text-slate-900 dark:text-white">
                   {{ recommended.wifi.downMbps }}/{{ recommended.wifi.upMbps }}
-                </span>{" "}
+                </span>
                 Mbps
               </div>
               <div class="flex items-center gap-1 text-sm text-green-600 dark:text-green-400">
@@ -199,71 +194,7 @@
 
             <NuxtLink
               :to="`/basvuru?paket=${recommended.wifi.id}`"
-              class="block w-full py-3 rounded-xl font-extrabold text-center transition-all"
-              :class="recommended.primaryType === 'wifi'
-                ? 'bg-primary hover:bg-orange-600 text-white shadow-lg shadow-primary/30'
-                : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700'"
-            >
-              Başvur
-            </NuxtLink>
-          </div>
-
-          <!-- VDSL/Fiber Paketi -->
-          <div
-            class="rounded-3xl border-2 p-6 transition-colors"
-            :class="recommended.primaryType === 'wired'
-              ? 'border-primary bg-gradient-to-br from-primary/10 to-white dark:to-slate-900 shadow-xl'
-              : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900'"
-          >
-            <div v-if="recommended.primaryType === 'wired'" class="inline-flex items-center gap-1 text-xs font-extrabold px-3 py-1 rounded-full bg-primary text-white mb-4">
-              <span class="material-symbols-outlined text-sm">star</span>
-              Önerilen
-            </div>
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-12 h-12 rounded-2xl bg-pastel-blue dark:bg-blue-900/30 flex items-center justify-center">
-                <span class="material-symbols-outlined text-2xl text-blue-500">router</span>
-              </div>
-              <div>
-                <div class="text-xs font-bold text-blue-600 dark:text-blue-400">Fiber</div>
-                <div class="text-xl font-extrabold text-slate-900 dark:text-white">
-                  {{ recommended.wired.name }}
-                </div>
-              </div>
-            </div>
-
-            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
-              {{ recommended.wiredReason }}
-            </p>
-
-            <div class="flex items-center gap-4 mb-4">
-              <div class="text-sm text-slate-600 dark:text-slate-400">
-                <span class="font-bold text-slate-900 dark:text-white">
-                  {{ recommended.wired.downMbps }}/{{ recommended.wired.upMbps }}
-                </span>{" "}
-                Mbps
-              </div>
-              <div class="flex items-center gap-1 text-sm text-blue-600 dark:text-blue-400">
-                <span class="material-symbols-outlined text-sm">verified</span>
-                Sabit Altyapı
-              </div>
-            </div>
-
-            <div class="flex items-baseline gap-2 mb-4">
-              <span v-if="recommended.wired.oldPriceTry" class="text-slate-400 line-through text-sm">
-                {{ recommended.wired.oldPriceTry }}₺
-              </span>
-              <span class="text-3xl font-extrabold text-primary">
-                {{ recommended.wired.priceTry }}₺
-              </span>
-              <span class="text-slate-500 text-sm">/ay</span>
-            </div>
-
-            <NuxtLink
-              :to="`/basvuru?paket=${recommended.wired.id}`"
-              class="block w-full py-3 rounded-xl font-extrabold text-center transition-all"
-              :class="recommended.primaryType === 'wired'
-                ? 'bg-primary hover:bg-orange-600 text-white shadow-lg shadow-primary/30'
-                : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700'"
+              class="block w-full py-3 rounded-xl font-extrabold text-center transition-all bg-primary hover:bg-orange-600 text-white shadow-lg shadow-primary/30"
             >
               Başvur
             </NuxtLink>

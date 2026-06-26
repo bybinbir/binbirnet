@@ -34,7 +34,17 @@
 
     <!-- Title & Description -->
     <h3 class="text-2xl font-bold mb-1 text-slate-900 dark:text-white">
-      {{ pkg.name }}
+      <NuxtLink
+        v-if="detailHref"
+        :to="detailHref"
+        class="group/title inline-flex items-center gap-1 hover:text-primary transition-colors"
+      >
+        {{ pkg.name }}
+        <span class="material-symbols-outlined text-lg text-primary opacity-0 group-hover/title:opacity-100 transition-opacity">
+          arrow_forward
+        </span>
+      </NuxtLink>
+      <template v-else>{{ pkg.name }}</template>
     </h3>
     <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">
       {{ isWireless ? "Altyapısız internet özgürlüğü." : "Yüksek hızlı fiber keyfi." }}
@@ -103,6 +113,7 @@
 
 <script setup lang="ts">
 import type { Package } from '@/types';
+import { tarifeHref } from '~/utils/tarifeSlug';
 
 const props = withDefaults(defineProps<{
   pkg: Package;
@@ -115,4 +126,5 @@ const props = withDefaults(defineProps<{
 
 const isPopular = computed(() => props.pkg.badge === "POPULAR" || props.featured);
 const isWireless = computed(() => props.pkg.type === "WIRELESS");
+const detailHref = computed(() => tarifeHref(props.pkg));
 </script>

@@ -18,25 +18,5 @@
     "priceTry": 740,
     "oldPriceTry": 960,
     "badge": "POPULAR"
-  },
-  {
-    "id": "vdsl50",
-    "name": "Fiber 50",
-    "type": "WIRED",
-    "downMbps": 50,
-    "upMbps": 20,
-    "priceTry": 660,
-    "oldPriceTry": 900,
-    "badge": null
-  },
-  {
-    "id": "vdsl100",
-    "name": "Fiber 100",
-    "type": "WIRED",
-    "downMbps": 100,
-    "upMbps": 20,
-    "priceTry": 740,
-    "oldPriceTry": 1100,
-    "badge": null
   }
 ]

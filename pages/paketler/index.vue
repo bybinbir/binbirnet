@@ -182,7 +182,7 @@
           <p class="text-slate-600 dark:text-slate-400">WiFi paketlerimiz altyapı gerektirmez, anında kurulum yapılır!</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           <UiPackageCard v-for="(pkg, index) in sortedPackages" :key="pkg.id" :pkg="pkg" :featured="index < 2" showTypeBadge />
         </div>
       </div>
@@ -210,7 +210,8 @@
                   <td class="p-5">
                     <div class="flex items-center gap-3">
                       <span class="material-symbols-outlined" :class="pkg.type === 'WIRELESS' ? 'text-orange-500' : 'text-blue-500'">{{ pkg.type === 'WIRELESS' ? 'wifi' : 'router' }}</span>
-                      <span class="font-semibold text-slate-900 dark:text-white">{{ pkg.name }}</span>
+                      <NuxtLink v-if="tarifeHref(pkg)" :to="tarifeHref(pkg)!" class="font-semibold text-slate-900 dark:text-white hover:text-primary transition-colors">{{ pkg.name }}</NuxtLink>
+                      <span v-else class="font-semibold text-slate-900 dark:text-white">{{ pkg.name }}</span>
                       <span v-if="index < 2" class="text-[10px] font-bold bg-primary text-white px-2 py-0.5 rounded-full">ÖNERİLEN</span>
                     </div>
                   </td>
@@ -245,6 +246,7 @@
 <script setup lang="ts">
 
 import type { Package } from '~/types';
+import { tarifeHref } from '~/utils/tarifeSlug';
 
 const { data: packages } = await usePackages()
 
