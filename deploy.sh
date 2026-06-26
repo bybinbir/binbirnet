@@ -15,9 +15,10 @@ cp -r server/data/ server/data_backup/
 echo "  ✓ server/data_backup/ oluşturuldu"
 
 echo ""
-echo "[2/6] GitHub'dan güncelleme çekiliyor..."
-git pull origin main
-echo "  ✓ Kod güncellendi"
+echo "[2/6] GitHub'dan güncelleme çekiliyor (hard reset)..."
+git fetch origin
+git reset --hard origin/main
+echo "  ✓ Kod GitHub'daki origin/main ile birebir eşitlendi"
 
 echo ""
 echo "[3/6] Admin verileri geri yükleniyor..."
