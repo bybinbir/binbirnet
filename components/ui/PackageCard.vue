@@ -102,11 +102,12 @@
 
     <!-- CTA Button -->
     <NuxtLink
-      :to="`/basvuru?paket=${pkg.id}`"
-      class="cta-button mt-auto w-full py-4 rounded-2xl font-bold transition-all shadow-md text-center"
+      :to="detailHref ?? `/basvuru?paket=${pkg.id}`"
+      class="cta-button mt-auto w-full py-4 rounded-2xl font-bold transition-all shadow-md text-center flex items-center justify-center gap-2"
       :class="isPopular ? 'bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20' : 'bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-600'"
     >
-      {{ isPopular ? "Hemen Başvur" : "Seç ve Başla" }}
+      Paketi İncele
+      <span class="material-symbols-outlined text-lg">arrow_forward</span>
     </NuxtLink>
   </div>
 </template>

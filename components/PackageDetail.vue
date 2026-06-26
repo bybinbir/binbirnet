@@ -68,19 +68,29 @@
               </div>
             </div>
 
-            <!-- E-Devlet ile Hızlı Başvuru -->
-            <a
-              href="https://binbirnet.com.tr/online_basvuru"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-8 w-full py-4 rounded-2xl bg-primary hover:bg-orange-600 text-white font-black text-center flex items-center justify-center gap-3 transition-all hover:scale-[1.02] shadow-xl shadow-primary/20"
-            >
-              <span class="material-symbols-outlined">verified_user</span>
-              E-Devlet İle Hızlı Başvuru
-              <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
+            <!-- Başvuru butonları -->
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <!-- 1) E-Devlet ile Hızlı Başvuru -->
+              <a
+                href="https://binbirnet.com.tr/online_basvuru"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="py-4 px-4 rounded-2xl bg-primary hover:bg-orange-600 text-white font-black text-center flex items-center justify-center gap-2 transition-all hover:scale-[1.02] shadow-xl shadow-primary/20"
+              >
+                <span class="material-symbols-outlined">verified_user</span>
+                E-Devlet İle Başvur
+              </a>
+              <!-- 2) Site içi başvuru formu -->
+              <NuxtLink
+                :to="`/basvuru?paket=${pkg.id}`"
+                class="py-4 px-4 rounded-2xl border-2 border-primary text-primary hover:bg-primary hover:text-white font-black text-center flex items-center justify-center gap-2 transition-all"
+              >
+                <span class="material-symbols-outlined">edit_document</span>
+                Başvuru Formu
+              </NuxtLink>
+            </div>
             <p class="mt-3 text-center text-xs text-slate-500 dark:text-slate-400">
-              E-Devlet ile kimlik doğrulaması, dakikalar içinde abonelik.
+              E-Devlet ile kimlik doğrulaması dakikalar içinde tamamlanır; dilerseniz başvuru formunu da doldurabilirsiniz.
             </p>
           </div>
         </div>
